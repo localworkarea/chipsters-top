@@ -3221,11 +3221,9 @@
                 if (index === this.activeSectionId) {
                     section.style.opacity = "1";
                     section.style.pointerEvents = "all";
-                    section.style.visibility = "visible";
                 } else {
                     section.style.opacity = "0";
                     section.style.pointerEvents = "none";
-                    section.style.visibility = "hidden";
                 }
             }
         }

@@ -11,7 +11,9 @@
   // .main-bg__img
   &__img {
     @extend %ibg;
-    transition: object-position .65s ease;
+    .loaded & {
+      transition: object-position .65s ease;
+    }
     .fp-section-0 & {
       object-position: 50% 0%;
     }
@@ -63,15 +65,20 @@
 // @media (orientation: landscape) {}
 // @media (orientation: portrait) {}
 
+section {
+  .loaded & {
+    visibility: visible !important;
+  }
+}
+
 .section-0 {
   // pointer-events: none !important;
 	// .section-0__title
 	&__title {
     position: absolute;
-    
     @media (orientation: landscape) {
-      top: 30vh;
-      left: 5vw;
+      top: 27vh;
+      left: 10vw;
       font-size: 7.5vh;
     }
     @media (orientation: portrait) {
@@ -95,6 +102,9 @@
 	&__title-1 {
     z-index: 3;
     left: -50%;
+    @media (min-width:$mobileSmall){
+      padding-inline: 5vw;
+    }
     .loaded & {
       left: 0%;
     }
@@ -132,8 +142,9 @@
     }
 
     @media (orientation: landscape) {
-      height: 90dvh;
-      right: 0;
+      height: 100dvh;
+      right: 1vw;
+      bottom: -7%;
     }
 
     @media (orientation: portrait) {

@@ -125,7 +125,7 @@ body {
   overscroll-behavior: none
 }
 [data-fp] {
-  min-height: 100dvh
+  min-height: 100svh
 }
 .fp-init [data-fp] {
   z-index: 1;
@@ -137,14 +137,9 @@ body {
   touch-action: none
 }
 .fp-init [data-fp-section] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100svh;
-  overflow: auto
+  position: fixed;
+  overflow: auto;
+  inset: 0
 }
 .fp-init .cards-mode [data-fp-section],
 .fp-init .slider-mode [data-fp-section] {
@@ -229,7 +224,7 @@ body {
   height: 100dvh;
   z-index: 1
 }
-.main-bg__img {
+.loaded .main-bg__img {
   transition: object-position .65s ease;
   transition: object-position .65s ease,-o-object-position .65s ease
 }
@@ -262,6 +257,9 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1
+}
+.loaded section {
+  visibility: visible!important
 }
 .section-0__title {
   position: absolute
@@ -509,6 +507,11 @@ body {
 .swiper-button-lock {
   display: none!important
 }
+@media (min-width:30.06125em) {
+  .section-0__title-1 {
+    padding-inline: 5vw
+  }
+}
 @media (min-width:51.31125em) {
   .section-2__slider {
     max-width: 61.5625rem
@@ -671,13 +674,14 @@ body {
 }
 @media (orientation:landscape) {
   .section-0__title {
-    top: 30vh;
-    left: 5vw;
+    top: 27vh;
+    left: 10vw;
     font-size: 7.5vh
   }
   .section-0__lesya {
-    height: 90dvh;
-    right: 0
+    height: 100dvh;
+    right: 1vw;
+    bottom: -7%
   }
   .fp-section-1 .social,
   .fp-section-2 .social,
