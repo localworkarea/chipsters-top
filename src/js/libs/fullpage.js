@@ -392,9 +392,9 @@ export class FullPage {
 		// Подія натискання на екран
 		this.wrapper.addEventListener('touchstart', this.events.touchdown);
 		// Подія кліка по булетах
-		if (this.options.bullets && this.bulletsWrapper) {
-			this.bulletsWrapper.addEventListener('click', this.events.click);
-		}
+		// if (this.options.bullets && this.bulletsWrapper) {
+		// 	this.bulletsWrapper.addEventListener('click', this.events.click);
+		// }
 	}
 	removeEvents() {
 		this.wrapper.removeEventListener('wheel', this.events.wheel);
@@ -402,9 +402,9 @@ export class FullPage {
 		this.wrapper.removeEventListener('touchup', this.events.touchup);
 		this.wrapper.removeEventListener('touchcancel', this.events.touchup);
 		this.wrapper.removeEventListener('touchmove', this.events.touchmove);
-		if (this.bulletsWrapper) {
-			this.bulletsWrapper.removeEventListener('click', this.events.click);
-		}
+		// if (this.bulletsWrapper) {
+		// 	this.bulletsWrapper.removeEventListener('click', this.events.click);
+		// }
 	}
 	//===============================
 	// Функція кліка по булетах

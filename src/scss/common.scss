@@ -11,7 +11,7 @@ body {
 // Оболонка секцій
 [data-fp] {
 	// min-height: 100dvh;
-	min-height: 100svh;
+	min-height: 100dvh;
 	.fp-init & {
 		z-index: 1;
 		touch-action: none;
@@ -84,4 +84,49 @@ body {
 %flexCenter {
   display: flex;
   align-items: center;
+}
+
+
+.txt-block {
+	overflow: hidden;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    padding: toRem(20) toRem(30);
+    text-align: center;
+    transform:  skewX(-4deg) rotate(-4deg);
+    text-shadow: 0 0 20px rgba(160, 96, 221, 1);
+		display: inline-block;
+		transition: left .65s ease;
+		span {
+			display: inline-block;
+		}
+		&__txt {
+      position: relative;
+      z-index: 3;
+		}
+    &::before,
+    &::after {
+      content:"";
+      inset: 0;
+      position: absolute;
+    }
+    &::before {
+      z-index: 1;
+      margin: toRem(1);
+      background: linear-gradient(180deg, #4a0090 0%, #630ab7 100%);
+    }
+    &::after {
+      z-index: 0;
+    }
+    &.to-right {
+      &::after {
+        background: linear-gradient(90deg, #ffffff 0%, rgba(153,153,153, 0.5) 100%);
+      }
+    }
+    &.to-bottom {
+      &::after {
+        background: linear-gradient(180deg, #ffffff 0%, rgba(153,153,153, 0.5) 100%);
+      }
+    }
 }
