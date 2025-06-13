@@ -216,7 +216,7 @@ section {
     @media (orientation: portrait) {
       left: 50%;
       transform: translate(-50%, 0);
-      width: 70%;
+      width: auto;
        .option-selected & {
         height: 50%;
       }

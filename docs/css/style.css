@@ -1505,7 +1505,7 @@ body::after {
     left: 50%;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
-    width: 70%
+    width: auto
   }
   .option-selected .section-0__lesya {
     height: 50%
