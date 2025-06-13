@@ -84,7 +84,7 @@ section {
 
 .section-0 {
   .content-body {
-    padding: toRem(15);
+    padding: toRem(15) toRem(15) 0;
   }
   // .section-0__title
   &__title {
@@ -223,9 +223,12 @@ section {
     }
 
     @media (max-width:$mobileSmall) {
-      height: 65%;
+      height: 65% !important;
       width: auto;
       bottom: -5%;
+       .option-selected & {
+        height: 50% !important;
+      }
     }
   }
 
@@ -483,8 +486,8 @@ section {
     }
   }
   @media (orientation: portrait) and (max-width:$mobileSmall) {
-    padding-block: 11vh 2vh;
-     top: 13vh;
+    padding-block: 11vh 2vh !important;
+     top: 13vh !important;
   }
 	@media (min-width:$mobileSmall) {
 		background-image: url('@img/bg/popup-bg-pc.jpg');
@@ -538,7 +541,7 @@ section {
       left: 16%;
     }
     @media (orientation: portrait) and (max-width:$mobileSmall) {
-      width: 35vw;
+      width: 35vw !important;
     }
   }
   .txt-block {

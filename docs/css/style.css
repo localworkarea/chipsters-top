@@ -497,7 +497,7 @@ body::after {
   visibility: visible!important
 }
 .section-0 .content-body {
-  padding: .9375rem
+  padding: .9375rem .9375rem 0
 }
 .section-0__title {
   position: absolute;
@@ -1255,9 +1255,12 @@ body::after {
     font-size: 4vh
   }
   .section-0__lesya {
-    height: 65%;
+    height: 65%!important;
     width: auto;
     bottom: -5%
+  }
+  .option-selected .section-0__lesya {
+    height: 50%!important
   }
   .item {
     border-radius: .875rem
@@ -1299,14 +1302,14 @@ body::after {
     bottom: 1vh
   }
   .item {
-    padding-block: 11vh 2vh;
-    top: 13vh
+    padding-block: 11vh 2vh!important;
+    top: 13vh!important
   }
   .item__title {
     font-size: 7.5vw
   }
   .item__img {
-    width: 35vw
+    width: 35vw!important
   }
 }
 @media (max-width:24.43625em) {
