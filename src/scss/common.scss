@@ -112,10 +112,12 @@ body {
       z-index: 3;
 		}
     &::before,
-    &::after {
+    &::after,
+		.txt-block__bg {
       content:"";
       inset: 0;
       position: absolute;
+			transition: opacity .2s ease;
     }
     &::before {
       z-index: 1;
@@ -135,4 +137,10 @@ body {
         background: linear-gradient(180deg, #ffffff 0%, rgba(153,153,153, 0.5) 100%);
       }
     }
+		// .txt-block__bg
+		&__bg {
+			z-index: 2;
+      margin: toRem(1);
+			opacity: 0;
+		}
 }

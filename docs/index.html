@@ -11,7 +11,7 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250612182230">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250613191632">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -33,8 +33,16 @@
 					<img src="img/logo/logo-desktop@1x.webp" width="279" height="99" alt="лого Chipster's">
 				</picture>
 			</div>
-			<div class="top-popup"></div>
-			<section data-fp-section class="section-0">
+			<div class="chips">
+				<button type="button" data-popup="#popupTop" class="chips__btn" aria-label="кнопка розсипати чіпси">
+					<img class="chips__btn-img" src="img/chips/chips-desktop@2x.webp" width="257" height="111" alt="шматочок чипсів анімовано рухається та закликає клікнути по кнопці">
+					<span>
+						Обери свій топ
+					</span>
+				</button>
+			</div>
+
+			<section data-fp-section class="section-0 ">
 				<div class="content-body">
 					<h1 class="section-0__title">
 						<span class="section-0__title-1 txt-block to-right">
@@ -44,7 +52,48 @@
 							<span class="txt-block__txt">це смачно по-українськи !</span>
 						</span>
 					</h1>
-					<div class="section-0__lesya lesya-top">
+					<ul class="section-0__items">
+						<li class="item item-1">
+							<p class="item__title">Ого! По-київськи — вибір<br> справжніх гурманів!</p>
+							<picture>
+								<source srcset="img/packages/pack-kotleta-mobile@1x.webp 1x, img/packages/pack-kotleta-mobile@2x.webp 2x" media="(max-width: 30.061em)" type="image/webp">
+								<source srcset="img/packages/pack-kotleta-desktop@1x.webp 1x, img/packages/pack-kotleta-desktop@2x.webp 2x" type="image/webp">
+								<img class="item__img" src="img/packages/pack-kotleta-desktop@1x.webp" width="281" height="388" alt="image">
+							</picture>
+							<p class="txt-block to-bottom">
+								<span class="txt-block__t t-1">Котлету по-київськи вже вподобали </span><br>
+								<span class="txt-block__t t-2">понад <span>40</span>%</span><br>
+								<span class="txt-block__t t-3">наших фанів!</span><br>
+							</p>
+						</li>
+						<li class="item item-2">
+							<p class="item__title">Круто, що ти обрав борщ!</p>
+							<picture>
+								<source srcset="img/packages/pack-borsh-mobile@1x.webp 1x, img/packages/pack-borsh-mobile@2x.webp 2x" media="(max-width: 30.061em)" type="image/webp">
+								<source srcset="img/packages/pack-borsh-desktop@1x.webp 1x, img/packages/pack-borsh-desktop@2x.webp 2x" type="image/webp">
+								<img class="item__img" src="img/packages/pack-borsh-desktop@1x.webp" width="281" height="388" alt="image">
+							</picture>
+							<p class="txt-block to-bottom">
+								<span class="txt-block__t t-1">Його вже вподобали</span><br>
+								<span class="txt-block__t t-2">понад <span>50</span>%</span><br>
+								<span class="txt-block__t t-3">наших фанів!</span><br>
+							</p>
+						</li>
+						<li class="item item-3">
+							<p class="item__title">Обожнюєш вареники?<br> Ти не один!</p>
+							<picture>
+								<source srcset="img/packages/pack-vareniki-mobile@1x.webp 1x, img/packages/pack-vareniki-mobile@2x.webp 2x" media="(max-width: 30.061em)" type="image/webp">
+								<source srcset="img/packages/pack-vareniki-desktop@1x.webp 1x, img/packages/pack-vareniki-desktop@2x.webp 2x" type="image/webp">
+								<img class="item__img" src="img/packages/pack-vareniki-desktop@1x.webp" width="281" height="388" alt="image">
+							</picture>
+							<p class="txt-block to-bottom">
+								<span class="txt-block__t t-1">За цей смак голосує</span><br>
+								<span class="txt-block__t t-2">вже <span>25</span>%</span><br>
+								<span class="txt-block__t t-3">наших фанів!</span><br>
+							</p>
+						</li>
+					</ul>
+					<div class="section-0__lesya">
 						<picture>
 							<source srcset="img/lesya/lesya-mobile@1x.webp 1x, img/lesya/lesya-mobile@2x.webp 2x" media="(max-width: 30.061em)" type="image/webp">
 							<source srcset="img/lesya/lesya-desktop@1x.webp 1x, img/lesya/lesya-desktop@2x.webp 2x" type="image/webp">
@@ -55,6 +104,11 @@
 							<source srcset="img/lesya/lesya-top-desktop@1x.webp 1x, img/lesya/lesya-top-desktop@2x.webp 2x" type="image/webp">
 							<img class="section-0__lesya-img top-lesya" src="img/lesya/lesya-top-desktop@1x.webp" width="279" height="99" alt="Дівчина Леся посміхається тримає в руках дві пачки чипсів">
 						</picture>
+					</div>
+					<div class="scroll">
+						<button type="button" class="scroll__ic" aria-label="кнопка перемикання на наступний екран">
+							<img src="img/icons/scroll.svg" width="34" height="76" alt="іконка сроллу">
+						</button>
 					</div>
 				</div>
 			</section>
@@ -106,6 +160,7 @@
 							<div class="section-2__slide swiper-slide">
 								<div class="swiper-slide__item">
 									<picture>
+										<source srcset="img/packages/pack2-vareniki-desktop@1x.webp 1x, img/packages/pack2-vareniki-desktop@2x.webp 2x" media="(max-width: 30.061em)" type="image/webp">
 										<source srcset="img/packages/pack2-vareniki-desktop@1x.webp 1x, img/packages/pack2-vareniki-desktop@2x.webp 2x" type="image/webp">
 										<img class="swiper-slide__img" src="img/packages/pack2-vareniki-desktop@1x.webp" width="281" height="388" alt="image">
 									</picture>
@@ -147,7 +202,92 @@
 			</ul>
 		</main>
 	</div>
-	<script src="js/app.min.js?_v=20250612182230"></script>
+	<div id="popupTop" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<picture>
+					<source srcset="img/logo/logo-mobile@1x.webp 1x, img/logo/logo-mobile@2x.webp 2x" media="(max-width: 30.061em)" type="image/webp">
+					<source srcset="img/logo/logo-desktop@1x.webp 1x, img/logo/logo-desktop@2x.webp 2x" type="image/webp">
+					<img class="popup__logo" src="img/logo/logo-desktop@1x.webp" width="279" height="99" alt="лого Chipster's">
+				</picture>
+				<div class="popup__question">
+					<p class="txt-block to-right">
+						<span class="txt-block__txt">Який смак твій топ?</span>
+					</p>
+				</div>
+				<form class="popup__form form-popup" data-dev action="#" method="POST">
+					<div class="options">
+						<div class="options__item">
+							<input id="o_1" class="options__input" type="radio" value="1" name="option">
+							<label for="o_1" class="options__label label-1">
+								<div class="options__img img-1">
+									<picture>
+										<source srcset="img/packages/pack-kotleta-mobile@1x.webp 1x, img/packages/pack-kotleta-mobile@2x.webp 2x" media="(max-width: 30.061em)" type="image/webp">
+										<source srcset="img/packages/pack-kotleta-desktop@1x.webp 1x, img/packages/pack-kotleta-desktop@2x.webp 2x" type="image/webp">
+										<img src="img/packages/pack-kotleta-desktop@1x.webp" width="281" height="388" alt="image">
+									</picture>
+									<svg class="options__svg" width="210" height="290" viewBox="0 0 210 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.648224 19.1028C-1.23645 10.317 1.43351 2.9344 3.00407 0.341354C23.7358 -1.12295 97.0806 2.4768 131.162 4.45972C141.339 1.53111 187.545 1.71414 209.376 2.17174V13.6117V23.6788C206.706 31.763 201.366 48.2975 201.366 49.7618C201.366 51.2261 202.308 58.9137 202.779 62.5745L200.895 230.97C200.423 236.309 200.329 248.816 203.722 256.138C207.962 265.29 207.962 269.408 209.376 275.814C210.506 280.94 209.847 285.271 209.376 286.797L9.60006 290L6.30188 273.526L17.1388 233.716L14.7829 143.111L12.8982 67.608V62.5745V59.8289C9.60019 49.9143 2.5329 27.8887 0.648224 19.1028Z" fill="black" />
+									</svg>
+								</div>
+								<div class="options__txt">
+									<p class="txt-block to-right">
+										<span class="txt-block__txt">Котлета<br> по-київські</span>
+										<span class="txt-block__bg"></span>
+									</p>
+								</div>
+							</label>
+						</div>
+						<div class="options__item">
+							<input id="o_2" class="options__input" type="radio" value="2" name="option">
+							<label for="o_2" class="options__label label-2">
+								<div class="options__img img-2">
+									<picture>
+										<source srcset="img/packages/pack-borsh-mobile@1x.webp 1x, img/packages/pack-borsh-mobile@2x.webp 2x" media="(max-width: 30.061em)" type="image/webp">
+										<source srcset="img/packages/pack-borsh-desktop@1x.webp 1x, img/packages/pack-borsh-desktop@2x.webp 2x" type="image/webp">
+										<img src="img/packages/pack-borsh-desktop@1x.webp" width="281" height="388" alt="image">
+									</picture>
+									<svg class="options__svg" width="210" height="290" viewBox="0 0 210 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.648224 19.1028C-1.23645 10.317 1.43351 2.9344 3.00407 0.341354C23.7358 -1.12295 97.0806 2.4768 131.162 4.45972C141.339 1.53111 187.545 1.71414 209.376 2.17174V13.6117V23.6788C206.706 31.763 201.366 48.2975 201.366 49.7618C201.366 51.2261 202.308 58.9137 202.779 62.5745L200.895 230.97C200.423 236.309 200.329 248.816 203.722 256.138C207.962 265.29 207.962 269.408 209.376 275.814C210.506 280.94 209.847 285.271 209.376 286.797L9.60006 290L6.30188 273.526L17.1388 233.716L14.7829 143.111L12.8982 67.608V62.5745V59.8289C9.60019 49.9143 2.5329 27.8887 0.648224 19.1028Z" fill="black" />
+									</svg>
+								</div>
+								<div class="options__txt">
+									<p class="txt-block to-right">
+										<span class="txt-block__txt">Борщ</span>
+										<span class="txt-block__bg"></span>
+									</p>
+								</div>
+							</label>
+						</div>
+						<div class="options__item">
+							<input id="o_3" class="options__input" type="radio" value="3" name="option">
+							<label for="o_3" class="options__label label-3">
+								<div class="options__img img-3">
+									<picture>
+										<source srcset="img/packages/pack-vareniki-mobile@1x.webp 1x, img/packages/pack-vareniki-mobile@2x.webp 2x" media="(max-width: 30.061em)" type="image/webp">
+										<source srcset="img/packages/pack-vareniki-desktop@1x.webp 1x, img/packages/pack-vareniki-desktop@2x.webp 2x" type="image/webp">
+										<img src="img/packages/pack-vareniki-desktop@1x.webp" width="281" height="388" alt="image">
+									</picture>
+									<svg class="options__svg" width="210" height="290" viewBox="0 0 210 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.648224 19.1028C-1.23645 10.317 1.43351 2.9344 3.00407 0.341354C23.7358 -1.12295 97.0806 2.4768 131.162 4.45972C141.339 1.53111 187.545 1.71414 209.376 2.17174V13.6117V23.6788C206.706 31.763 201.366 48.2975 201.366 49.7618C201.366 51.2261 202.308 58.9137 202.779 62.5745L200.895 230.97C200.423 236.309 200.329 248.816 203.722 256.138C207.962 265.29 207.962 269.408 209.376 275.814C210.506 280.94 209.847 285.271 209.376 286.797L9.60006 290L6.30188 273.526L17.1388 233.716L14.7829 143.111L12.8982 67.608V62.5745V59.8289C9.60019 49.9143 2.5329 27.8887 0.648224 19.1028Z" fill="black" />
+									</svg>
+								</div>
+								<div class="options__txt">
+									<p class="txt-block to-right">
+										<span class="txt-block__txt">Вареники</span>
+										<span class="txt-block__bg"></span>
+									</p>
+								</div>
+							</label>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="popup-chips">
+	</div>
+	<script src="js/app.min.js?_v=20250613191632"></script>
 </body>
 
 </html>

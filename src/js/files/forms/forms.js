@@ -1,9 +1,19 @@
 // Підключення списку активних модулів
-import { flsModules } from "../modules.js";
+import {
+	flsModules
+} from "../modules.js";
 // Допоміжні функції
-import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
+import {
+	isMobile,
+	_slideUp,
+	_slideDown,
+	_slideToggle,
+	FLS
+} from "../functions.js";
 // Модуль прокручування до блоку
-import { gotoBlock } from "../scroll/gotoblock.js";
+import {
+	gotoBlock
+} from "../scroll/gotoblock.js";
 //================================================================================================================================================================================================================================================================================================================================
 
 /*
@@ -11,7 +21,10 @@ import { gotoBlock } from "../scroll/gotoblock.js";
 */
 
 // Робота із полями форми.
-export function formFieldsInit(options = { viewPass: false, autoHeight: false }) {
+export function formFieldsInit(options = {
+	viewPass: false,
+	autoHeight: false
+}) {
 	document.body.addEventListener("focusin", function (e) {
 		const targetElement = e.target;
 		if ((targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA')) {
@@ -62,6 +75,7 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 					}
 				});
 			});
+
 			function setHeight(textarea, height) {
 				textarea.style.height = `${height}px`;
 			}
@@ -180,65 +194,71 @@ export function formSubmit() {
 				formValidate.formClean(form);
 			});
 		}
+		// === Обработка радиокнопок внутри форм ===
+		const optionRadios = document.querySelectorAll('.options__input');
+		optionRadios.forEach(radio => {
+			radio.addEventListener('change', function () {
+				const form = this.closest('form');
+				const html = document.documentElement;
+
+				// Удаляем предыдущие классы option-*
+				html.classList.remove('option-1', 'option-2', 'option-3');
+
+				// Добавляем соответствующий класс
+				const value = this.value;
+				if (value === '1' || value === '2' || value === '3') {
+					html.classList.add(`option-${value}`);
+					html.classList.add(`option-selected`);
+				}
+
+				setTimeout(() => {
+					if (flsModules.popup) {
+						flsModules.popup.close();
+					}
+				}, 150);
+
+				if (form) {
+					form.requestSubmit();
+				}
+			});
+		});
 	}
 	async function formSubmitAction(form, e) {
-		const error = !form.hasAttribute('data-no-validate') ? formValidate.getErrors(form) : 0;
-		if (error === 0) {
-			const ajax = form.hasAttribute('data-ajax');
-			if (ajax) { // Якщо режим ajax
-				e.preventDefault();
-				const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#';
-				const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET';
-				const formData = new FormData(form);
-
-				form.classList.add('_sending');
-				const response = await fetch(formAction, {
-					method: formMethod,
-					body: formData
-				});
-				if (response.ok) {
-					let responseResult = await response.json();
-					form.classList.remove('_sending');
-					formSent(form, responseResult);
-				} else {
-					alert("Помилка");
-					form.classList.remove('_sending');
-				}
-			} else if (form.hasAttribute('data-dev')) {	// Якщо режим розробки
-				e.preventDefault();
-				formSent(form);
-			}
-		} else {
+		const ajax = form.hasAttribute('data-ajax');
+		if (ajax) { // Якщо режим ajax
 			e.preventDefault();
-			if (form.querySelector('._form-error') && form.hasAttribute('data-goto-error')) {
-				const formGoToErrorClass = form.dataset.gotoError ? form.dataset.gotoError : '._form-error';
-				gotoBlock(formGoToErrorClass, true, 1000);
+			const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#';
+			const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET';
+			const formData = new FormData(form);
+
+			form.classList.add('_sending');
+			const response = await fetch(formAction, {
+				method: formMethod,
+				body: formData
+			});
+			if (response.ok) {
+				let responseResult = await response.json();
+				form.classList.remove('_sending');
+				formSent(form, responseResult);
+			} else {
+				alert("Помилка");
+				form.classList.remove('_sending');
 			}
+		} else if (form.hasAttribute('data-dev')) { // Якщо режим розробки
+			e.preventDefault();
+			formSent(form);
 		}
 	}
-	// Дії після надсилання форми
+
 	function formSent(form, responseResult = ``) {
-		// Створюємо подію відправлення форми
 		document.dispatchEvent(new CustomEvent("formSent", {
 			detail: {
 				form: form
 			}
 		}));
-		// Показуємо попап, якщо підключено модуль попапів 
-		// та для форми вказано налаштування
-		setTimeout(() => {
-			if (flsModules.popup) {
-				const popup = form.dataset.popupMessage;
-				popup ? flsModules.popup.open(popup) : null;
-			}
-		}, 0);
-		// Очищуємо форму
+	
 		formValidate.formClean(form);
-		// Повідомляємо до консолі
-		formLogging(`Форму відправлено!`);
-	}
-	function formLogging(message) {
-		FLS(`[Форми]: ${message}`);
+		// console.log("Форма отправлена");
 	}
 }
 /* Модуль форми "кількість" */
@@ -385,6 +405,7 @@ export function formRating() {
 			document.addEventListener('click', formRatingAction)
 		});
 	}
+
 	function formRatingAction(e) {
 		const targetElement = e.target;
 		if (targetElement.closest('.rating__input')) {
@@ -395,6 +416,7 @@ export function formRating() {
 			ratingSet ? formRatingGet(rating, ratingValue) : null;
 		}
 	}
+
 	function formRatingInit(rating, ratingSize) {
 		let ratingItems = ``;
 		for (let index = 0; index < ratingSize; index++) {
@@ -407,6 +429,7 @@ export function formRating() {
 		}
 		rating.insertAdjacentHTML("beforeend", ratingItems)
 	}
+
 	function formRatingGet(rating, ratingValue) {
 		// Тут відправка оцінки (ratingValue) на бекенд...
 		// Отримуємо нову седню оцінку formRatingSend()
@@ -414,6 +437,7 @@ export function formRating() {
 		const resultRating = ratingValue;
 		formRatingSet(rating, resultRating);
 	}
+
 	function formRatingSet(rating, value) {
 		const ratingItems = rating.querySelectorAll('.rating__item');
 		const resultFullItems = parseInt(value);
@@ -433,9 +457,9 @@ export function formRating() {
 			}
 		});
 	}
+
 	function formRatingSend() {
 
 	}
 
 }
-
