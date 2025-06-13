@@ -528,7 +528,7 @@ body::after {
   left: 0
 }
 .loaded .section-0__title-1 .txt-block__txt {
-  transition-delay: .5s
+  transition-delay: .5s!important
 }
 .section-0__title-2 {
   top: -3vh;
@@ -539,7 +539,7 @@ body::after {
   transition-delay: .1s
 }
 .loaded .section-0__title-2 .txt-block__txt {
-  transition-delay: .65s
+  transition-delay: .65s!important
 }
 .section-0__lesya {
   position: absolute;
@@ -1159,7 +1159,7 @@ body::after {
 }
 @media (orientation:landscape)and (max-width:90.06125em) {
   .chips__btn {
-    font-size: 3.5vw
+    font-size: 3.5vw!important
   }
 }
 @media (max-width:90.06125em) {
@@ -1169,7 +1169,7 @@ body::after {
 }
 @media (orientation:landscape)and (max-width:85.43625em)and (min-height:43.81125em) {
   .section-0__lesya {
-    height: 80dvh
+    height: 80dvh!important
   }
 }
 @media (orientation:landscape)and (max-width:75.06125em) {
@@ -1182,8 +1182,8 @@ body::after {
     top: 15vh
   }
   .chips__btn {
-    width: 20vw;
-    font-size: 2.6vw
+    width: 20vw!important;
+    font-size: 2.6vw!important
   }
 }
 @media (orientation:landscape)and (max-width:56.31125em)and (max-height:30.06125em) {
@@ -1252,7 +1252,7 @@ body::after {
   }
   .section-0__title-2 {
     top: -2vh;
-    font-size: 4vh
+    font-size: 4.5vh
   }
   .section-0__lesya {
     height: 65%!important;
@@ -1292,21 +1292,21 @@ body::after {
 }
 @media (orientation:portrait)and (max-width:30.06125em) {
   .section-0__title {
-    top: 17vh;
-    font-size: 4.5vh
+    top: 17vh!important;
+    font-size: 5vh!important
   }
   .chips__btn {
-    width: 64vw;
-    font-size: 9vw;
-    right: 5vw;
-    bottom: 1vh
+    width: 64vw!important;
+    font-size: 9vw!important;
+    right: 5vw 1vmin;
+    bottom: 1vh!important
   }
   .item {
     padding-block: 11vh 2vh!important;
     top: 13vh!important
   }
   .item__title {
-    font-size: 7.5vw
+    font-size: 7.5vw!important
   }
   .item__img {
     width: 35vw!important

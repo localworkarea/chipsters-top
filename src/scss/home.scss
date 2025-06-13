@@ -45,12 +45,7 @@
     scale: 1;
   }
 
-  // @media (max-width: toEm(390.98)) and (max-height: toEm(670.98)){
-  // top: toRem(10) !important;
-  // }
   @media (orientation: landscape) and (max-height: toEm(480.98)) {
-
-    // top: toRem(10) !important;
     .fp-section-1 & {
       opacity: 0;
     }
@@ -117,8 +112,8 @@ section {
     }
 
     @media (orientation: portrait) and (max-width:$mobileSmall) {
-      top: 17vh;
-      font-size: 4.5vh;
+      top: 17vh !important;
+      font-size: 5vh !important;
     }
 
     .txt-block {}
@@ -166,7 +161,7 @@ section {
 
     .txt-block__txt {
       .loaded & {
-        transition-delay: 0.5s;
+        transition-delay: 0.5s !important;
       }
     }
   }
@@ -183,13 +178,13 @@ section {
 
     .txt-block__txt {
       .loaded & {
-        transition-delay: .65s;
+        transition-delay: .65s !important;
       }
     }
 
     @media (max-width:$mobileSmall) {
       top: -2vh;
-      font-size: 4vh;
+      font-size: 4.5vh;
     }
   }
 
@@ -210,7 +205,7 @@ section {
       bottom: -7%;
     }
     @media (orientation: landscape) and (max-width:toEm(1366.98)) and (min-height:toEm(700.98))  {
-      height: 80dvh;
+      height: 80dvh !important;
     }
 
     @media (orientation: portrait) {
@@ -295,7 +290,7 @@ section {
     }
 
     @media (orientation: landscape) and (max-width: toEm(1440.98)) {
-      font-size: 3.5vw;
+      font-size: 3.5vw !important;
     }
 
     @media (orientation: landscape) {
@@ -306,8 +301,8 @@ section {
     }
 
     @media (orientation: landscape) and (max-width: toEm(1000.98)) and (max-height: toEm(480.98)) {
-      width: 20vw;
-      font-size: 2.6vw;
+      width: 20vw !important;
+      font-size: 2.6vw !important;
     }
 
     @media (orientation: portrait) {
@@ -319,10 +314,10 @@ section {
     }
 
     @media (orientation: portrait) and (max-width:$mobileSmall) {
-      width: 64vw;
-      font-size: 9vw;
-      right: 5vw;
-      bottom: 1vh;
+      width: 64vw !important;
+      font-size: 9vw !important;
+      right: 5vw 1vmin;
+      bottom: 1vh !important;
     }
 
     .loaded & {
@@ -522,7 +517,7 @@ section {
       font-size: 6vw;
     }
     @media (orientation: portrait) and (max-width:$mobileSmall) {
-       font-size: 7.5vw;
+       font-size: 7.5vw !important;
      }
   }
   // .item__img
