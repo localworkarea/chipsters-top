@@ -582,24 +582,54 @@ section {
 
 .scroll {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   left: 50%;
   transform: translate(-50%,50%);
   pointer-events: none;
   opacity: 0;
-  transition: opacity .45s ease, transform .65s ease;
-  .fp-section-0.option-selected & {
+  transition: opacity .45s ease, transform .65s ease, bottom .65s ease;
+  .fp-section-0.option-selected &,
+  .fp-section-1.option-selected & {
     opacity: 1;
     transition-delay: .75s;
     transform: translate(-50%,0%);
     pointer-events: all;
   }
+  .fp-section-0.option-selected.fp-up & {
+    transition-delay: 0s;
+  }
+  .fp-section-1.option-selected & {
+      transition-delay: 0s;
+    }
   @media (min-width:$mobileSmall){
     bottom: 5vh;
+    .fp-section-1.option-selected & {
+      bottom: 10vh;
+    }
+  }
+  @media (orientation: landscape) and (max-height: toEm(480.98)) {
+    .fp-section-0 &,
+    .fp-section-1 & {
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+  }
+  @media (orientation: portrait) and (min-width:$mobileSmall) {
+     .fp-section-1.option-selected & {
+       bottom: 20vh !important;
+     }
   }
   @media (max-width:$mobileSmall){
     bottom: 6vh;
+    .fp-section-1.option-selected & {
+      bottom: 19vh !important;
+    }
   }
+    @media (max-width:toEm(390.98)){
+      .fp-section-1.option-selected & {
+        bottom: 20vh !important;
+      }
+    }
 
   // .scroll__ic
   &__ic {
@@ -760,6 +790,10 @@ section {
     @media (max-width: toEm(820.98)) and (min-width:$mobileSmall) {
       max-width: 50%;
     }
+    
+    @media (orientation: landscape) and (max-height: toEm(480.98)) {
+      max-width: 30% !important;
+    }
 
     @media (max-width:$mobileSmall) {
       max-width: 70%;
@@ -898,6 +932,12 @@ section {
 
     @media (max-width:$mobileSmall) {
       bottom: 5vh;
+    }
+  }
+
+   .fp-section-1 & {
+    @media (orientation: landscape) {
+      bottom: 2vh !important;
     }
   }
 

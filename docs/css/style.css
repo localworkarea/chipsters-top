@@ -767,22 +767,29 @@ body::after {
 }
 .scroll {
   position: absolute;
-  z-index: 3;
+  z-index: 5;
   left: 50%;
   -webkit-transform: translate(-50%,50%);
   transform: translate(-50%,50%);
   pointer-events: none;
   opacity: 0;
-  transition: opacity .45s ease,-webkit-transform .65s ease;
-  transition: opacity .45s ease,transform .65s ease;
-  transition: opacity .45s ease,transform .65s ease,-webkit-transform .65s ease
+  transition: opacity .45s ease,bottom .65s ease,-webkit-transform .65s ease;
+  transition: opacity .45s ease,transform .65s ease,bottom .65s ease;
+  transition: opacity .45s ease,transform .65s ease,bottom .65s ease,-webkit-transform .65s ease
 }
-.fp-section-0.option-selected .scroll {
+.fp-section-0.option-selected .scroll,
+.fp-section-1.option-selected .scroll {
   opacity: 1;
   transition-delay: .75s;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
   pointer-events: all
+}
+.fp-section-0.option-selected.fp-up .scroll {
+  transition-delay: 0s
+}
+.fp-section-1.option-selected .scroll {
+  transition-delay: 0s
 }
 .scroll__ic {
   position: relative;
@@ -1056,6 +1063,14 @@ body::after {
   .scroll {
     bottom: 5vh
   }
+  .fp-section-1.option-selected .scroll {
+    bottom: 10vh
+  }
+}
+@media (orientation:portrait)and (min-width:30.06125em) {
+  .fp-section-1.option-selected .scroll {
+    bottom: 20vh!important
+  }
 }
 @media (min-width:51.31125em) {
   .section-2__slider {
@@ -1271,6 +1286,9 @@ body::after {
   .scroll {
     bottom: 6vh
   }
+  .fp-section-1.option-selected .scroll {
+    bottom: 19vh!important
+  }
   .scroll__ic img {
     height: 3.25rem
   }
@@ -1315,6 +1333,9 @@ body::after {
 @media (max-width:24.43625em) {
   .logo img {
     max-width: 10.9375rem
+  }
+  .fp-section-1.option-selected .scroll {
+    bottom: 20vh!important
   }
   .swiper-slide__txt {
     font-size: 1.875rem
@@ -1473,6 +1494,9 @@ body::after {
   .fp-section-3 .social {
     bottom: 5vh
   }
+  .fp-section-1 .social {
+    bottom: 2vh!important
+  }
 }
 @media (orientation:portrait) {
   .popup-chips:after,
@@ -1593,5 +1617,13 @@ body::after {
 @media (orientation:landscape)and (max-height:30.06125em) {
   .fp-section-1 .logo {
     opacity: 0
+  }
+  .fp-section-0 .scroll,
+  .fp-section-1 .scroll {
+    opacity: 0!important;
+    pointer-events: none!important
+  }
+  .section-2__slider {
+    max-width: 30%!important
   }
 }
