@@ -1076,6 +1076,9 @@ body::after {
   .section-2__slider {
     max-width: 61.5625rem
   }
+  .section-2__button {
+    display: none
+  }
   .swiper-slide:nth-child(1) .swiper-slide__item {
     transition-delay: 0s
   }
@@ -1207,6 +1210,33 @@ body::after {
   }
 }
 @media (max-width:51.31125em) {
+  .section-2__button {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    z-index: 5;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.3);
+    width: 3.125rem;
+    aspect-ratio: 1;
+    transition: opacity .2s ease
+  }
+  .section-2__button svg {
+    width: 100%;
+    height: auto
+  }
+  .section-2__button.swiper-button-prev {
+    left: .9375rem
+  }
+  .section-2__button.swiper-button-next {
+    right: .9375rem
+  }
+  .section-2__button.swiper-button-disabled {
+    opacity: 0
+  }
   .swiper-slide__item {
     transition: -webkit-transform .5s ease;
     transition: transform .5s ease;
@@ -1314,9 +1344,9 @@ body::after {
     font-size: 5vh!important
   }
   .chips__btn {
-    width: 64vw!important;
-    font-size: 9vw!important;
-    right: 5vw 1vmin;
+    width: 53vw!important;
+    font-size: 8vw!important;
+    right: 4vw!important;
     bottom: 1vh!important
   }
   .item {
@@ -1478,7 +1508,8 @@ body::after {
   }
   .item__img {
     width: 17vw;
-    left: 19%
+    left: 19%;
+    top: 3vh
   }
   .item .txt-block__t.t-1 {
     font-size: 2vw

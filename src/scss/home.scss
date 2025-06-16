@@ -314,9 +314,9 @@ section {
     }
 
     @media (orientation: portrait) and (max-width:$mobileSmall) {
-      width: 64vw !important;
-      font-size: 9vw !important;
-      right: 5vw 1vmin;
+      width: 53vw !important;
+      font-size: 8vw !important;
+      right: 4vw !important;
       bottom: 1vh !important;
     }
 
@@ -530,6 +530,7 @@ section {
     @media (orientation: landscape) {
       width: 17vw;
       left: 19%;
+      top: 3vh;
     }
     @media (orientation: portrait) {
       width: 30vw;
@@ -805,6 +806,38 @@ section {
 
   // .section-2__slide
   &__slide {}
+	// .section-2__button
+	&__button {
+    @media (min-width:toEm(820.98)){
+       display: none; 
+    }
+    @media (max-width:toEm(820.98)){
+      position: absolute;
+      top: 50%;
+      transform: translate(0%,-50%);
+      z-index: 5;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      width: toRem(50);
+      aspect-ratio: 1;
+      transition: opacity .2s ease;
+      svg {
+        width: 100%;
+        height: auto;
+      }
+      &.swiper-button-prev {
+        left: toRem(15);
+      }
+      &.swiper-button-next {
+        right: toRem(15);
+      }
+      &.swiper-button-disabled {
+        opacity: 0;
+      }
+    }
+	}
 }
 
 .swiper-slide {

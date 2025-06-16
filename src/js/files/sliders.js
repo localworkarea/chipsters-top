@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-// import { } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -26,14 +26,20 @@ import "../../scss/base/swiper.scss";
 
 // Ініціалізація слайдерів
 function initSliders() {
-	if (document.querySelector('.swiper')) { 
-		new Swiper('.swiper', { 
-			// modules: [Navigation],
+	if (document.querySelector('.section-2__slider')) { 
+		new Swiper('.section-2__slider', { 
+			modules: [Navigation],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 3,
 			spaceBetween: 20,
 			speed: 500,
+
+				navigation: {
+						prevEl: '.section-2 .swiper-button-prev',
+						nextEl: '.section-2 .swiper-button-next',
+				},
+
 
 			// Брейкпоінти
 			breakpoints: {
@@ -42,6 +48,7 @@ function initSliders() {
 					spaceBetween: 0,
 					centeredSlides: true, // Центрирование активного слайда
         	initialSlide: 1,
+					allowTouchMove: false,
 				},
 				821: {
 					slidesPerView: 3,
