@@ -48,7 +48,7 @@ function initSliders() {
 					spaceBetween: 0,
 					centeredSlides: true, // Центрирование активного слайда
         	initialSlide: 1,
-					allowTouchMove: false,
+					// allowTouchMove: false,
 				},
 				821: {
 					slidesPerView: 3,

@@ -3607,8 +3607,7 @@
                     slidesPerView: 1,
                     spaceBetween: 0,
                     centeredSlides: true,
-                    initialSlide: 1,
-                    allowTouchMove: false
+                    initialSlide: 1
                 },
                 821: {
                     slidesPerView: 3,
