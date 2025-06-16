@@ -931,7 +931,7 @@ section {
     }
 
     @media (max-width:$mobileSmall) {
-      bottom: 5vh;
+      bottom: 5vh !important;
     }
   }
 

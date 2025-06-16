@@ -1305,7 +1305,7 @@ body::after {
   .fp-section-1 .social,
   .fp-section-2 .social,
   .fp-section-3 .social {
-    bottom: 5vh
+    bottom: 5vh!important
   }
 }
 @media (orientation:portrait)and (max-width:30.06125em) {
